@@ -2,12 +2,12 @@
 using namespace std ;
 int main (){
 	//menghitung keliling & luas persegi
-	int a;
+	int s;
 	cout<<"Sisi : " ;
-	cin>>a;
+	cin>>s;
 	
 	cout<<"Hasil"<<endl;
-	cout<<"Keliling = "<<4*a<<endl;
-	cout<<"Luas = "<<a*a;
+	cout<<"Keliling = "<<4*s<<endl;
+	cout<<"Luas = "<<s*s;
 	return 0 ;
 }
