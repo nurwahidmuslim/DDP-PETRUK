@@ -1,0 +1,47 @@
+vector<string> convertToInfixArray(const string& text){
+    vector<string> InfixArray;
+    string token;
+    
+    for(char c : text){
+        if(c == ' '){
+            continue;
+        }
+        else if(isdigit(c) or c == '.'){
+            token += c;
+        }
+        else{
+            if(!token.empty()){
+                InfixArray.push_back(token);
+                token.clear();
+            }
+            InfixArray.push_back(string(1, c));
+        }
+    }
+    
+    if(!token.empty()){
+        InfixArray.push_back(token);
+    }
+    
+    return InfixArray;
+}
+
+bool isOperator(string op){
+    if(op == "+" or op == "-" or op == "*" or op == "/"){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+int getPrecedence(string op){
+    if(op == "*" or op == "/"){
+        return 2;
+    }
+    else if(op == "+" or op == "-"){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
